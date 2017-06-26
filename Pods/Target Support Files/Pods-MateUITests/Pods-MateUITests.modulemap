@@ -1,0 +1,6 @@
+framework module Pods_MateUITests {
+  umbrella header "Pods-MateUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
