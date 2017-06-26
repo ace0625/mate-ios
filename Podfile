@@ -7,7 +7,9 @@ target 'Mate' do
 
   # Pods for Mate
   pod 'Firebase/Core'
-
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  
   target 'MateTests' do
     inherit! :search_paths
     # Pods for testing
