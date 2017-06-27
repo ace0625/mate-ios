@@ -11,18 +11,21 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    // Outlets
+    // MARK: Constants
+    let loginToList = "LoginToList"
+    
+    // MARK: Outlets
     @IBOutlet weak var textFieldLoginEmail: UITextField!
     @IBOutlet weak var textFieldLoginPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        FIRAuth.auth()!.addStateDidChangeListener { (auth, user) in
-//            if user != nil {
-//                self.performSegue(withIdentifier: <#T##String#>, sender: nil)
-//            }
-//        }
+        FIRAuth.auth()!.addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.performSegue(withIdentifier: self.loginToList, sender: nil)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,12 +33,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    // Actions
+    // MARK: Actions
     @IBAction func loginAction(_ sender: Any) {
         FIRAuth.auth()!.signIn(withEmail: textFieldLoginEmail.text!, password: textFieldLoginPassword.text!, completion: nil)
     }
 
     @IBAction func signUpAction(_ sender: Any) {
+        
         let alert = UIAlertController(title: "Register",
                                       message: "Register",
                                       preferredStyle: .alert)
@@ -44,7 +48,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                        style: .default) { action in
                                         let emailField = alert.textFields![0]
                                         let passwordField = alert.textFields![1]
-                                        
+                                        print("print: \(emailField)")
                                         FIRAuth.auth()!.createUser(withEmail: emailField.text!,
                                                                    password: passwordField.text!) { user, error in
                                                                     if error == nil {
@@ -54,7 +58,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                         }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel",
+        let cancelAction = UIAlertAction(title: "Register",
                                          style: .default)
         
         alert.addTextField { textEmail in
@@ -66,9 +70,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             textPassword.placeholder = "Enter your password"
         }
         
-        alert.addAction(saveAction)
         alert.addAction(cancelAction)
-        
+        alert.addAction(saveAction)
+    
         present(alert, animated: true, completion: nil)
     }
     
