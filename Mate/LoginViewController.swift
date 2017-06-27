@@ -12,9 +12,11 @@ import FirebaseAuth
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Constants
+    
     let loginToList = "LoginToList"
     
     // MARK: Outlets
+    
     @IBOutlet weak var textFieldLoginEmail: UITextField!
     @IBOutlet weak var textFieldLoginPassword: UITextField!
     
@@ -34,6 +36,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     // MARK: Actions
+    
     @IBAction func loginAction(_ sender: Any) {
         FIRAuth.auth()!.signIn(withEmail: textFieldLoginEmail.text!, password: textFieldLoginPassword.text!, completion: nil)
     }

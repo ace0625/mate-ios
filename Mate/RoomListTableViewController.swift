@@ -10,6 +10,18 @@ import UIKit
 
 class RoomListTableViewController: UITableViewController {
 
+    // MARK: Constants
+    
+    let roomToUsers = "RoomToUsers"
+    
+    // MARK: Properties
+    
+    var rooms: [Room] = []
+    var user: User!
+    var roomCountBarButtonItem: UIBarButtonItem!
+    
+    // MARK: UIViewController Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,8 +37,8 @@ class RoomListTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
+    // MARK: UITableView Delegate methods
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
