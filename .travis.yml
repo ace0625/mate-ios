@@ -1,0 +1,4 @@
+language: swift
+xcode_project: Mate.xcodeproj # path to your xcodeproj folder
+osx_image: xcode8
+xcode_sdk: iphonesimulator10.0
