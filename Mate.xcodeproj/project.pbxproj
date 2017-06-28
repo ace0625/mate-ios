@@ -47,7 +47,7 @@
 		48A5FA3845300CE54B509F20 /* Pods_MateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5D54A0824131C81BC3DCE3 /* Pods-MateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MateTests/Pods-MateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3070561F00DE2C00E84E18 /* Mate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA3070591F00DE2C00E84E18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA3070591F00DE2C00E84E18 /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AA30705E1F00DE2C00E84E18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA3070601F00DE2C00E84E18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3070651F00DE2C00E84E18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,14 +57,15 @@
 		AA3070751F00DE2C00E84E18 /* MateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3070791F00DE2C00E84E18 /* MateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateUITests.swift; sourceTree = "<group>"; };
 		AA30707B1F00DE2C00E84E18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA30708A1F00DF1200E84E18 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AA30708A1F00DF1200E84E18 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AA30708C1F00F12B00E84E18 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AA30708E1F00F18B00E84E18 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AA30708E1F00F18B00E84E18 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AA3C550C1F01F68000E93228 /* Mate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mate.entitlements; sourceTree = "<group>"; };
 		AA3C550D1F01F75300E93228 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA766DF1342945724CE44118 /* Pods-MateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MateUITests/Pods-MateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RoomListTableViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
-		AAB25E851F02559E00E349AC /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		AAB25E851F02559E00E349AC /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; tabWidth = 2; };
+		AAB25E8A1F034CA300E349AC /* Mate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mate-Bridging-Header.h"; sourceTree = "<group>"; };
 		C0EBEAD64F3055D2F948BAE0 /* Pods-MateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MateTests/Pods-MateTests.release.xcconfig"; sourceTree = "<group>"; };
 		D54ECAD976928865A1645F40 /* Pods-Mate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mate/Pods-Mate.debug.xcconfig"; sourceTree = "<group>"; };
 		ED94014A8DAED22A251CFF52 /* Pods-MateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MateUITests/Pods-MateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,10 +141,9 @@
 				AA3070891F00DE4700E84E18 /* Models */,
 				AA3070881F00DE3D00E84E18 /* Controllers */,
 				AA3070871F00DE3300E84E18 /* Views */,
-				AA3070591F00DE2C00E84E18 /* AppDelegate.swift */,
+				AAB25E881F034AD900E349AC /* Other */,
+				AAB25E871F034AB300E349AC /* Supporting Files */,
 				AA3070601F00DE2C00E84E18 /* Assets.xcassets */,
-				AA3070651F00DE2C00E84E18 /* Info.plist */,
-				AA3C550D1F01F75300E93228 /* GoogleService-Info.plist */,
 			);
 			path = Mate;
 			sourceTree = "<group>";
@@ -191,6 +191,24 @@
 				AAB25E851F02559E00E349AC /* Room.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		AAB25E871F034AB300E349AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA3070651F00DE2C00E84E18 /* Info.plist */,
+				AA3C550D1F01F75300E93228 /* GoogleService-Info.plist */,
+				AAB25E8A1F034CA300E349AC /* Mate-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAB25E881F034AD900E349AC /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				AA3070591F00DE2C00E84E18 /* AppDelegate.swift */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		C60C591880161871F1E9C3DD /* Frameworks */ = {
@@ -648,6 +666,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dankim.mate.Mate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mate/Mate-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -663,6 +682,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dankim.mate.Mate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mate/Mate-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

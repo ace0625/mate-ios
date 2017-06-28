@@ -78,6 +78,14 @@
                                     <action selector="signUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eb8-Lg-UEJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXf-HZ-2Jl">
+                                <rect key="frame" x="153" y="486" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Facebook "/>
+                                <connections>
+                                    <action selector="facebookLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M70-wZ-Yec"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -164,7 +172,7 @@
         <scene sceneID="MI1-7f-1m1">
             <objects>
                 <navigationController id="BcV-7Y-Fz1" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BcY-gP-NuQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BcY-gP-NuQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
