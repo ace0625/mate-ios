@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    try! FIRAuth.auth()!.signOut()
+    try! FIRAuth.auth()!.signOut()
     FIRAuth.auth()!.addStateDidChangeListener { (auth, user) in
       if user != nil {
         self.performSegue(withIdentifier: self.loginToList, sender: nil)
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                    style: .default) { action in
                                     let emailField = alert.textFields![0]
                                     let passwordField = alert.textFields![1]
-                                    print("print: \(emailField)")
+                                  
                                     FIRAuth.auth()!.createUser(withEmail: emailField.text!,
                                                                password: passwordField.text!) { user, error in
                                                                 if error == nil {
@@ -64,7 +64,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                     }
     }
     
-    let cancelAction = UIAlertAction(title: "Register",
+    let cancelAction = UIAlertAction(title: "Cancel",
                                      style: .default)
     
     alert.addTextField { textEmail in
@@ -102,15 +102,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print("Cancelled")
       } else {
         print("Logged in")
-        self.getFBUserData()
         self.signInToFirebase()
+        self.getFBUserData()
       }
     }
   }
   
   func getFBUserData() {
     if FBSDKAccessToken.current() != nil {
-      FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: {(connection, result, error) -> Void in
+      FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
         if error == nil {
           print(result as Any)
         }
