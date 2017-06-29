@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     try! FIRAuth.auth()!.signOut()
-    FIRAuth.auth()!.addStateDidChangeListener { (auth, user) in
+    FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
       if user != nil {
         self.performSegue(withIdentifier: self.loginToList, sender: nil)
       }

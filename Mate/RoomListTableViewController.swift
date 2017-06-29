@@ -17,7 +17,7 @@ class RoomListTableViewController: UITableViewController {
   
   // MARK: Properties
   let roomRef = FIRDatabase.database().reference().child("room")
-  let usersRef = FIRDatabase.database().reference(withPath: "online")
+  let usersRef = FIRDatabase.database().reference().child("online")
   var rooms: [Room] = []
   var user: User!
   var userCountBarButtonItem: UIBarButtonItem!
@@ -28,6 +28,7 @@ class RoomListTableViewController: UITableViewController {
     
     self.tableView.allowsMultipleSelectionDuringEditing = false
     
+    userCountBarButtonItem = UIBarButtonItem(title: "1", style: .plain, target: self, action: #selector(onlineUserCountButtonAction))
     userCountBarButtonItem.tintColor = UIColor.white
     navigationItem.leftBarButtonItem = userCountBarButtonItem
     
@@ -51,7 +52,7 @@ class RoomListTableViewController: UITableViewController {
       self.tableView.reloadData()
     })
     
-    FIRAuth.auth()!.addStateDidChangeListener { (auth, user) in
+    FIRAuth.auth()!.addStateDidChangeListener { auth, user in
       guard let user = user else { return }
       self.user = User(authData: user)
       let currentUserRef = self.usersRef.child(self.user.uid)
@@ -85,6 +86,19 @@ class RoomListTableViewController: UITableViewController {
     return true
   }
   
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      let room = rooms[indexPath.row]
+      room.ref?.removeValue()
+    }
+  }
+  
+//  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    guard let cell = tableView.cellForRow(at: indexPath) else { return }
+//    let room = rooms[indexPath.row]
+//    
+//  }
+  
   // MARK: Actions
   
   @IBAction func AddRoomAction(_ sender: Any) {
@@ -117,5 +131,9 @@ class RoomListTableViewController: UITableViewController {
     alert.addAction(saveAction)
     
     present(alert, animated: true, completion: nil)
+  }
+  
+  func onlineUserCountButtonAction() {
+    print("onlineUserCountButtonAction")
   }
 }
