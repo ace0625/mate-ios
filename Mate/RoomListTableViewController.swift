@@ -13,7 +13,7 @@ import FirebaseDatabase
 class RoomListTableViewController: UITableViewController {
   
   // MARK: Constants
-  let roomToUsers = "RoomToUsers"
+  let listToRoom = "ListToRoom"
   
   // MARK: Properties
   let roomRef = FIRDatabase.database().reference().child("room")
@@ -21,6 +21,7 @@ class RoomListTableViewController: UITableViewController {
   var rooms: [Room] = []
   var user: User!
   var userCountBarButtonItem: UIBarButtonItem!
+  var senderDisplayName: String?
   
   // MARK: UIViewController Lifecycle
   override func viewDidLoad() {
@@ -61,6 +62,19 @@ class RoomListTableViewController: UITableViewController {
     }
   }
   
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
+    
+    if let room = sender as? Room {
+      let roomDetailVc = segue.destination as! RoomDetailViewController
+      
+      roomDetailVc.senderDisplayName = senderDisplayName
+      roomDetailVc.room = room
+      roomDetailVc.roomRef = roomRef.child(room.title)
+    }
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -93,11 +107,10 @@ class RoomListTableViewController: UITableViewController {
     }
   }
   
-//  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    guard let cell = tableView.cellForRow(at: indexPath) else { return }
-//    let room = rooms[indexPath.row]
-//    
-//  }
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let room = rooms[indexPath.row]
+    self.performSegue(withIdentifier: self.listToRoom, sender: room)
+  }
   
   // MARK: Actions
   

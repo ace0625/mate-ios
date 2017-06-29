@@ -35,6 +35,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // Dispose of any resources that can be recreated.
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
+    
+    let navVc = segue.destination as! UINavigationController
+    let roomListVc = navVc.viewControllers.first as! RoomListTableViewController
+    
+    roomListVc.senderDisplayName = textFieldLoginEmail?.text
+  }
   // MARK: Actions
   @IBAction func facebookLoginAction(_ sender: Any) {
     self.facebookLogin()

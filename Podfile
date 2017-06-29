@@ -9,6 +9,8 @@ target 'Mate' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'JSQMessagesViewController'
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
