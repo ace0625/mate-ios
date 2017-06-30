@@ -62,7 +62,6 @@ class RoomListTableViewController: UITableViewController {
     }
   }
   
-  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
     
@@ -81,7 +80,6 @@ class RoomListTableViewController: UITableViewController {
   }
   
   // MARK: UITableView Delegate methods
-  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return rooms.count
   }
@@ -113,7 +111,6 @@ class RoomListTableViewController: UITableViewController {
   }
   
   // MARK: Actions
-  
   @IBAction func AddRoomAction(_ sender: Any) {
     let alert = UIAlertController(title: "New room",
                                   message: "Enter title",
