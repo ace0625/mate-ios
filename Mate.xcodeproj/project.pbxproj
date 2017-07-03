@@ -17,6 +17,7 @@
 		AA30708F1F00F18B00E84E18 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30708E1F00F18B00E84E18 /* User.swift */; };
 		AA3C550E1F01F75300E93228 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA3C550D1F01F75300E93228 /* GoogleService-Info.plist */; };
 		AA513A3A1F04D5160069928B /* RoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA513A391F04D5160069928B /* RoomDetailViewController.swift */; };
+		AAA47A721F0A141B00BD2DFA /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA47A711F0A141B00BD2DFA /* EmailLoginViewController.swift */; };
 		AAB25E841F0240B700E349AC /* RoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */; };
 		AAB25E861F02559E00E349AC /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB25E851F02559E00E349AC /* Room.swift */; };
 		B064DFBBD8D6040F1683095C /* Pods_Mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0469476E516BD5FEF8D69C /* Pods_Mate.framework */; };
@@ -65,6 +66,7 @@
 		AA3C550D1F01F75300E93228 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA513A391F04D5160069928B /* RoomDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RoomDetailViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AA766DF1342945724CE44118 /* Pods-MateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MateUITests/Pods-MateUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AAA47A711F0A141B00BD2DFA /* EmailLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RoomListTableViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAB25E851F02559E00E349AC /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAB25E8A1F034CA300E349AC /* Mate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				AA30708A1F00DF1200E84E18 /* LoginViewController.swift */,
 				AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */,
 				AA513A391F04D5160069928B /* RoomDetailViewController.swift */,
+				AAA47A711F0A141B00BD2DFA /* EmailLoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA513A3A1F04D5160069928B /* RoomDetailViewController.swift in Sources */,
+				AAA47A721F0A141B00BD2DFA /* EmailLoginViewController.swift in Sources */,
 				AAB25E841F0240B700E349AC /* RoomListTableViewController.swift in Sources */,
 				AA30708B1F00DF1200E84E18 /* LoginViewController.swift in Sources */,
 				AA30705A1F00DE2C00E84E18 /* AppDelegate.swift in Sources */,

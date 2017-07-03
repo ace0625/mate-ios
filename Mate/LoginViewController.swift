@@ -11,14 +11,14 @@ import FirebaseAuth
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
   
   // MARK: Constants
   let loginToList = "LoginToList"
+  let loginToEmail = "LoginToEmail"
   
-  // MARK: Outlets
-  @IBOutlet weak var textFieldLoginEmail: UITextField!
-  @IBOutlet weak var textFieldLoginPassword: UITextField!
+  // MARK: Properties
+  var userEmail: String?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,75 +30,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
     
     let navVc = segue.destination as! UINavigationController
     let roomListVc = navVc.viewControllers.first as! RoomListTableViewController
     
-    roomListVc.senderDisplayName = textFieldLoginEmail?.text
+    roomListVc.senderDisplayName = userEmail
   }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
   // MARK: Actions
   @IBAction func facebookLoginAction(_ sender: Any) {
     self.facebookLogin()
   }
   
-  @IBAction func loginAction(_ sender: Any) {
-    FIRAuth.auth()!.signIn(withEmail: textFieldLoginEmail.text!, password: textFieldLoginPassword.text!, completion: nil)
-  }
-  
-  @IBAction func signUpAction(_ sender: Any) {
-    
-    let alert = UIAlertController(title: "Register",
-                                  message: "Register",
-                                  preferredStyle: .alert)
-    
-    let saveAction = UIAlertAction(title: "Save",
-                                   style: .default) { action in
-                                    let emailField = alert.textFields![0]
-                                    let passwordField = alert.textFields![1]
-                                  
-                                    FIRAuth.auth()!.createUser(withEmail: emailField.text!,
-                                                               password: passwordField.text!) { user, error in
-                                                                if error == nil {
-                                                                  FIRAuth.auth()!.signIn(withEmail: self.textFieldLoginEmail.text!,
-                                                                                         password: self.textFieldLoginPassword.text!)
-                                                                }
-                                    }
-    }
-    
-    let cancelAction = UIAlertAction(title: "Cancel",
-                                     style: .default)
-    
-    alert.addTextField { textEmail in
-      textEmail.placeholder = "Enter your email"
-    }
-    
-    alert.addTextField { textPassword in
-      textPassword.isSecureTextEntry = true
-      textPassword.placeholder = "Enter your password"
-    }
-    
-    alert.addAction(cancelAction)
-    alert.addAction(saveAction)
-    
-    present(alert, animated: true, completion: nil)
-  }
-  
-  
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if textField == textFieldLoginEmail {
-      textFieldLoginPassword.becomeFirstResponder()
-    }
-    if textField == textFieldLoginPassword {
-      textField.resignFirstResponder()
-    }
-    return true
+  @IBAction func emailLoginAction(_ sender: Any) {
+    self.performSegue(withIdentifier: self.loginToEmail, sender: nil)
   }
   
   func facebookLogin() {
@@ -133,4 +85,3 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     })
   }
 }
-
