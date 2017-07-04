@@ -73,6 +73,8 @@ class LoginViewController: UIViewController {
       FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
         if error == nil {
           print(result as Any)
+          let data: [String: AnyObject] = result as! [String: AnyObject]
+          self.userEmail = data["email"] as? String
         }
       })
     }
