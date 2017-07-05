@@ -18,6 +18,7 @@
 		AA3C550E1F01F75300E93228 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA3C550D1F01F75300E93228 /* GoogleService-Info.plist */; };
 		AA513A3A1F04D5160069928B /* RoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA513A391F04D5160069928B /* RoomDetailViewController.swift */; };
 		AAA47A721F0A141B00BD2DFA /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA47A711F0A141B00BD2DFA /* EmailLoginViewController.swift */; };
+		AAA47ACE1F0CCDED00BD2DFA /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA47ACD1F0CCDED00BD2DFA /* KakaoOpenSDK.framework */; };
 		AAB25E841F0240B700E349AC /* RoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */; };
 		AAB25E861F02559E00E349AC /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB25E851F02559E00E349AC /* Room.swift */; };
 		B064DFBBD8D6040F1683095C /* Pods_Mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0469476E516BD5FEF8D69C /* Pods_Mate.framework */; };
@@ -67,6 +68,7 @@
 		AA513A391F04D5160069928B /* RoomDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RoomDetailViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AA766DF1342945724CE44118 /* Pods-MateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MateUITests/Pods-MateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAA47A711F0A141B00BD2DFA /* EmailLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		AAA47ACD1F0CCDED00BD2DFA /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RoomListTableViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAB25E851F02559E00E349AC /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAB25E8A1F034CA300E349AC /* Mate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B064DFBBD8D6040F1683095C /* Pods_Mate.framework in Frameworks */,
+				AAA47ACE1F0CCDED00BD2DFA /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +223,7 @@
 		C60C591880161871F1E9C3DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AAA47ACD1F0CCDED00BD2DFA /* KakaoOpenSDK.framework */,
 				2A0469476E516BD5FEF8D69C /* Pods_Mate.framework */,
 				0B8D0E14F85B69A88DD8C8A2 /* Pods_MateTests.framework */,
 				48A5FA3845300CE54B509F20 /* Pods_MateUITests.framework */,
@@ -670,8 +674,65 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mate/Mate.entitlements;
 				DEVELOPMENT_TEAM = 9JUUF4DE58;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Mate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"FacebookCore\"",
+					"-framework",
+					"\"FacebookLogin\"",
+					"-framework",
+					"\"FacebookShare\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseAuth\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseDatabase\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"FirebaseStorage\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleToolboxForMac\"",
+					"-framework",
+					"\"JSQMessagesViewController\"",
+					"-framework",
+					"\"JSQSystemSoundPlayer\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dankim.mate.Mate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mate/Mate-Bridging-Header.h";
@@ -686,8 +747,65 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mate/Mate.entitlements;
 				DEVELOPMENT_TEAM = 9JUUF4DE58;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Mate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"FacebookCore\"",
+					"-framework",
+					"\"FacebookLogin\"",
+					"-framework",
+					"\"FacebookShare\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseAuth\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseDatabase\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"FirebaseStorage\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleToolboxForMac\"",
+					"-framework",
+					"\"JSQMessagesViewController\"",
+					"-framework",
+					"\"JSQSystemSoundPlayer\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dankim.mate.Mate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mate/Mate-Bridging-Header.h";

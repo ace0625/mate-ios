@@ -30,15 +30,6 @@ class LoginViewController: UIViewController {
     }
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    super.prepare(for: segue, sender: sender)
-    
-    let navVc = segue.destination as! UINavigationController
-    let roomListVc = navVc.viewControllers.first as! RoomListTableViewController
-    
-    roomListVc.senderDisplayName = userEmail
-  }
-  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -47,6 +38,10 @@ class LoginViewController: UIViewController {
   // MARK: Actions
   @IBAction func facebookLoginAction(_ sender: Any) {
     self.facebookLogin()
+  }
+  
+  @IBAction func kakaoLoginAction(_ sender: Any) {
+    self.kakaoLogin()
   }
   
   @IBAction func emailLoginAction(_ sender: Any) {
@@ -66,6 +61,20 @@ class LoginViewController: UIViewController {
         self.getFBUserData()
       }
     }
+  }
+  
+  func kakaoLogin() {
+    let session: KOSession = KOSession.shared();
+    if session.isOpen() {
+      session.close()
+    }
+    
+    session.presentingViewController = self
+    session.open(completionHandler: { (error) in
+      if error != nil {
+        print("Kakao login error: \(String(describing: error?.localizedDescription))")
+      }
+    }, authParams: nil, authTypes: [NSNumber(value: KOAuthType.talk.rawValue), NSNumber(value: KOAuthType.account.rawValue), NSNumber(value: KOAuthType.story.rawValue)])
   }
   
   func getFBUserData() {

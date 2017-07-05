@@ -49,7 +49,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="GZx-gI-neA"/>
                                 </constraints>
-                                <state key="normal" title="Login"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bxu-DV-OEz"/>
                                 </connections>
@@ -73,13 +75,15 @@
                                     <constraint firstAttribute="width" constant="270" id="WbR-La-ivg"/>
                                     <constraint firstAttribute="height" constant="35" id="liM-NZ-FuS"/>
                                 </constraints>
-                                <state key="normal" title="Sign up"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" red="0.3411764706" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="signUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1MT-o9-cB1"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yOI-VJ-p3O" firstAttribute="centerX" secondItem="GfL-DB-aBH" secondAttribute="centerX" id="1hm-6f-lZw"/>
                             <constraint firstItem="QdR-Ks-EaR" firstAttribute="centerX" secondItem="yOI-VJ-p3O" secondAttribute="centerX" id="1p3-fZ-eyn"/>
@@ -127,6 +131,9 @@
                                 <state key="normal" title="kakao">
                                     <color key="titleColor" red="0.40000000000000002" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="kakaoLoginAction:" destination="JIE-Ke-9uj" eventType="touchUpInside" id="AX4-Xx-iKc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMo-SF-IYl">
                                 <rect key="frame" x="54" y="554" width="266" height="30"/>
@@ -150,7 +157,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA5-vC-ELw">
                                 <rect key="frame" x="54" y="457" width="266" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.03735442318904969" green="0.28652363841371187" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -159,7 +166,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aMo-SF-IYl" firstAttribute="trailing" secondItem="Zsk-U4-Sva" secondAttribute="trailing" id="5gw-Y7-QTl"/>
                             <constraint firstItem="nA5-vC-ELw" firstAttribute="leading" secondItem="zaq-Qx-BSC" secondAttribute="leadingMargin" constant="38" id="6Nc-Xj-uRV"/>
@@ -275,6 +282,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8We-oU-kFY"/>
+        <segue reference="Xvy-SC-MsY"/>
     </inferredMetricsTieBreakers>
 </document>
