@@ -10,17 +10,18 @@ import UIKit
 import FirebaseAuth
 
 class EmailLoginViewController: UIViewController, UITextFieldDelegate {
-
+    
     // MARK: Constants
     let loginToList = "LoginToList"
     
     // MARK: Outlets
     @IBOutlet weak var textFieldLoginEmail: UITextField!
     @IBOutlet weak var textFieldLoginPassword: UITextField!
+    @IBOutlet weak var bottomLayoutGuideConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         try! FIRAuth.auth()!.signOut()
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
@@ -28,7 +29,19 @@ class EmailLoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -93,5 +106,23 @@ class EmailLoginViewController: UIViewController, UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // MARK: - Notifications
+    
+    func keyboardWillShowNotification(_ notification: Notification) {
+        let keyboardEndFrame = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let convertedKeyboardEndFrame = view.convert(keyboardEndFrame, from: view.window)
+        bottomLayoutGuideConstraint.constant = view.bounds.maxY - convertedKeyboardEndFrame.minY
+        self.view.layoutIfNeeded()
+    }
+    
+    func keyboardWillHideNotification(_ notification: Notification) {
+        bottomLayoutGuideConstraint.constant = self.view.frame.height / 4
+        self.view.layoutIfNeeded()
     }
 }

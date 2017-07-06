@@ -15,10 +15,10 @@
 		AA30708B1F00DF1200E84E18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30708A1F00DF1200E84E18 /* LoginViewController.swift */; };
 		AA30708D1F00F12B00E84E18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA30708C1F00F12B00E84E18 /* LaunchScreen.storyboard */; };
 		AA30708F1F00F18B00E84E18 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA30708E1F00F18B00E84E18 /* User.swift */; };
-		AA3C550E1F01F75300E93228 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA3C550D1F01F75300E93228 /* GoogleService-Info.plist */; };
 		AA513A3A1F04D5160069928B /* RoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA513A391F04D5160069928B /* RoomDetailViewController.swift */; };
 		AAA47A721F0A141B00BD2DFA /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA47A711F0A141B00BD2DFA /* EmailLoginViewController.swift */; };
 		AAA47ACE1F0CCDED00BD2DFA /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA47ACD1F0CCDED00BD2DFA /* KakaoOpenSDK.framework */; };
+		AAA47AD01F0DF72200BD2DFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAA47ACF1F0DF72200BD2DFA /* GoogleService-Info.plist */; };
 		AAB25E841F0240B700E349AC /* RoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */; };
 		AAB25E861F02559E00E349AC /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB25E851F02559E00E349AC /* Room.swift */; };
 		B064DFBBD8D6040F1683095C /* Pods_Mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0469476E516BD5FEF8D69C /* Pods_Mate.framework */; };
@@ -64,11 +64,11 @@
 		AA30708C1F00F12B00E84E18 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA30708E1F00F18B00E84E18 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AA3C550C1F01F68000E93228 /* Mate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mate.entitlements; sourceTree = "<group>"; };
-		AA3C550D1F01F75300E93228 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA513A391F04D5160069928B /* RoomDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RoomDetailViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AA766DF1342945724CE44118 /* Pods-MateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MateUITests/Pods-MateUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		AAA47A711F0A141B00BD2DFA /* EmailLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		AAA47A711F0A141B00BD2DFA /* EmailLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAA47ACD1F0CCDED00BD2DFA /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		AAA47ACF1F0DF72200BD2DFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RoomListTableViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAB25E851F02559E00E349AC /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAB25E8A1F034CA300E349AC /* Mate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 		AAB25E871F034AB300E349AC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AAA47ACF1F0DF72200BD2DFA /* GoogleService-Info.plist */,
 				AA3070651F00DE2C00E84E18 /* Info.plist */,
-				AA3C550D1F01F75300E93228 /* GoogleService-Info.plist */,
 				AAB25E8A1F034CA300E349AC /* Mate-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
@@ -311,7 +311,13 @@
 						DevelopmentTeam = 9JUUF4DE58;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -356,7 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA30708D1F00F12B00E84E18 /* LaunchScreen.storyboard in Resources */,
-				AA3C550E1F01F75300E93228 /* GoogleService-Info.plist in Resources */,
+				AAA47AD01F0DF72200BD2DFA /* GoogleService-Info.plist in Resources */,
 				AA3070611F00DE2C00E84E18 /* Assets.xcassets in Resources */,
 				AA30705F1F00DE2C00E84E18 /* Main.storyboard in Resources */,
 			);
@@ -733,7 +739,7 @@
 					"\"SystemConfiguration\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dankim.mate.Mate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dankim.teammate.mate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mate/Mate-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -806,7 +812,7 @@
 					"\"SystemConfiguration\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dankim.mate.Mate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dankim.teammate.mate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mate/Mate-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

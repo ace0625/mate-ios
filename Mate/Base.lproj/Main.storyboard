@@ -72,8 +72,7 @@
                                 <rect key="frame" x="52" y="432" width="270" height="35"/>
                                 <color key="backgroundColor" red="0.65490196079999996" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="270" id="WbR-La-ivg"/>
-                                    <constraint firstAttribute="height" constant="35" id="liM-NZ-FuS"/>
+                                    <constraint firstAttribute="height" constant="35" id="bMr-DR-8uI"/>
                                 </constraints>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" red="0.3411764706" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -87,23 +86,25 @@
                         <constraints>
                             <constraint firstItem="yOI-VJ-p3O" firstAttribute="centerX" secondItem="GfL-DB-aBH" secondAttribute="centerX" id="1hm-6f-lZw"/>
                             <constraint firstItem="QdR-Ks-EaR" firstAttribute="centerX" secondItem="yOI-VJ-p3O" secondAttribute="centerX" id="1p3-fZ-eyn"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Svz-Nc-2c6" secondAttribute="bottom" constant="200" id="2kf-Bt-ETt"/>
-                            <constraint firstItem="Svz-Nc-2c6" firstAttribute="top" secondItem="DCv-Ej-Z0b" secondAttribute="bottom" constant="9" id="71f-kr-y4N"/>
+                            <constraint firstItem="Svz-Nc-2c6" firstAttribute="leading" secondItem="QdR-Ks-EaR" secondAttribute="leading" id="60x-xK-Wbj"/>
                             <constraint firstItem="DCv-Ej-Z0b" firstAttribute="top" secondItem="GfL-DB-aBH" secondAttribute="bottom" constant="16" id="8fO-aX-t1V"/>
                             <constraint firstItem="QdR-Ks-EaR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="36" id="9fk-E7-Xgl"/>
                             <constraint firstItem="DCv-Ej-Z0b" firstAttribute="trailing" secondItem="GfL-DB-aBH" secondAttribute="trailing" id="E08-9E-XOt"/>
+                            <constraint firstItem="Svz-Nc-2c6" firstAttribute="top" secondItem="DCv-Ej-Z0b" secondAttribute="bottom" constant="9" id="Ftr-70-r6U"/>
                             <constraint firstItem="DCv-Ej-Z0b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GDv-s1-uu5"/>
                             <constraint firstItem="yOI-VJ-p3O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YUb-wQ-emD"/>
                             <constraint firstItem="GfL-DB-aBH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="37" id="bW7-oA-Cmz"/>
                             <constraint firstItem="yOI-VJ-p3O" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="fGB-Sn-LOw"/>
                             <constraint firstItem="GfL-DB-aBH" firstAttribute="top" secondItem="QdR-Ks-EaR" secondAttribute="bottom" constant="17" id="kkk-De-iuq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Svz-Nc-2c6" secondAttribute="bottom" constant="200" id="p1R-hO-vKZ"/>
+                            <constraint firstItem="Svz-Nc-2c6" firstAttribute="trailing" secondItem="QdR-Ks-EaR" secondAttribute="trailing" id="tTr-uF-zXh"/>
                             <constraint firstItem="yOI-VJ-p3O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="v9f-Pv-0e8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Svz-Nc-2c6" secondAttribute="trailing" constant="37" id="wHg-e0-KC0"/>
                             <constraint firstItem="DCv-Ej-Z0b" firstAttribute="leading" secondItem="GfL-DB-aBH" secondAttribute="leading" id="wQS-8h-YH9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gCz-8M-9BJ"/>
                     <connections>
+                        <outlet property="bottomLayoutGuideConstraint" destination="p1R-hO-vKZ" id="Gl3-VA-H04"/>
                         <outlet property="textFieldLoginEmail" destination="QdR-Ks-EaR" id="92X-ef-3kD"/>
                         <outlet property="textFieldLoginPassword" destination="GfL-DB-aBH" id="FGt-ZP-wLp"/>
                         <segue destination="BcV-7Y-Fz1" kind="presentation" identifier="LoginToList" id="8We-oU-kFY"/>
@@ -111,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="532"/>
+            <point key="canvasLocation" x="-148" y="530.28485757121439"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="a6S-O4-PUD">
@@ -282,6 +283,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Xvy-SC-MsY"/>
+        <segue reference="8We-oU-kFY"/>
     </inferredMetricsTieBreakers>
 </document>
