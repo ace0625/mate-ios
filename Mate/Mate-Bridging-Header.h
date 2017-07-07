@@ -1,6 +1,7 @@
-//
-//  Use this file to import your target's public headers that you would like to expose to Swift.
-//
+#ifndef Mate_Bridging_Header_h
+#define Mate_Bridging_Header_h
 
 #import <Firebase/Firebase.h>
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
+
+#endif /* Mate_Bridging_Header_h */

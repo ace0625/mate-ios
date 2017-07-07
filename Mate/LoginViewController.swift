@@ -68,11 +68,36 @@ class LoginViewController: UIViewController {
     if session.isOpen() {
       session.close()
     }
-    
+
     session.presentingViewController = self
     session.open(completionHandler: { (error) in
       if error != nil {
-        print("Kakao login error: \(String(describing: error?.localizedDescription))")
+        print("Kakao login error: \(error?.localizedDescription ?? "")")
+      } else if session.isOpen() == true {
+        print("kakao in")
+        KOSessionTask.meTask(completionHandler: { (result, error) in
+          if result != nil {
+            
+            print("login success: \(KOSession.shared().accessToken)")
+            
+            DispatchQueue.main.async(execute: { () -> Void in
+              let kakao: KOUser = result as! KOUser
+              
+              if let nickName = kakao.email {
+                print("kakao email: \(nickName)")
+              }
+              if let image = kakao.property(forKey: KOUserProfileImagePropertyKey) as? String {
+                print("kakao email: \(image)")
+              }
+              if let thumbnail = kakao.property(forKey: KOUserThumbnailImagePropertyKey) as? String {
+                print("kakao thumbnail: \(thumbnail)")
+              }
+              if let age = kakao.properties?["age"] {
+                print("kakao age: \(age)")
+              }
+            })
+          }
+        })
       }
     }, authParams: nil, authTypes: [NSNumber(value: KOAuthType.talk.rawValue), NSNumber(value: KOAuthType.account.rawValue), NSNumber(value: KOAuthType.story.rawValue)])
   }
