@@ -22,8 +22,8 @@ class LoginViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    try! FIRAuth.auth()!.signOut()
-    FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
+    try! Auth.auth().signOut()
+    Auth.auth().addStateDidChangeListener() { auth, user in
       if user != nil {
         self.performSegue(withIdentifier: self.loginToList, sender: nil)
       }
@@ -115,8 +115,8 @@ class LoginViewController: UIViewController {
   }
   
   func signInToFirebase() {
-    let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-    FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+    let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+    Auth.auth().signIn(with: credential, completion: { (user, error) in
       print("Sign in to Firebase")
     })
   }

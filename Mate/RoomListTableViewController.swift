@@ -16,8 +16,8 @@ class RoomListTableViewController: UITableViewController {
   let listToRoom = "ListToRoom"
   
   // MARK: Properties
-  let roomRef = FIRDatabase.database().reference().child("room")
-  let usersRef = FIRDatabase.database().reference().child("online")
+  let roomRef = Database.database().reference().child("room")
+  let usersRef = Database.database().reference().child("online")
   var rooms: [Room] = []
   var user: User!
   var userCountBarButtonItem: UIBarButtonItem!
@@ -33,7 +33,7 @@ class RoomListTableViewController: UITableViewController {
     userCountBarButtonItem.tintColor = UIColor.white
     navigationItem.leftBarButtonItem = userCountBarButtonItem
     
-    usersRef.observe(FIRDataEventType.value, with: { snapshot in
+    usersRef.observe(DataEventType.value, with: { snapshot in
       if snapshot.exists() {
         self.userCountBarButtonItem?.title = snapshot.childrenCount.description
       } else {
@@ -41,11 +41,11 @@ class RoomListTableViewController: UITableViewController {
       }
     })
     
-    roomRef.queryOrdered(byChild: "completed").observe(FIRDataEventType.value, with: { snapshot in
+    roomRef.queryOrdered(byChild: "completed").observe(DataEventType.value, with: { snapshot in
       var newRooms: [Room] = []
       
       for room in snapshot.children {
-        let newRoom = Room(snapshot: room as! FIRDataSnapshot)
+        let newRoom = Room(snapshot: room as! DataSnapshot)
         newRooms.append(newRoom)
       }
       
@@ -53,9 +53,10 @@ class RoomListTableViewController: UITableViewController {
       self.tableView.reloadData()
     })
     
-    FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+    Auth.auth().addStateDidChangeListener { auth, user in
       guard let user = user else { return }
-      self.user = User(authData: user)
+      self.user = User(uid: user.uid, email: user.email!)
+//      self.user = User(authData: user)
       let currentUserRef = self.usersRef.child(self.user.uid)
       currentUserRef.setValue(self.user.email)
       currentUserRef.onDisconnectRemoveValue()

@@ -17,9 +17,9 @@ class User {
   var lastName: String?
   var age: Int?
   
-  init(authData: FIRUser) {
-    uid = authData.uid
-    email = authData.email!
+  init(authData: User) {
+    self.uid = authData.uid
+    self.email = authData.email
   }
   
   init(uid: String, email: String) {

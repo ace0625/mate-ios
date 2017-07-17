@@ -15,11 +15,11 @@ class RoomDetailViewController: JSQMessagesViewController {
   
   // MARK: Properties
   var messages = [JSQMessage]()
-  var roomRef: FIRDatabaseReference?
+  var roomRef: DatabaseReference?
   lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingMessage()
   lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingMessage()
-  private lazy var messageRef: FIRDatabaseReference = self.roomRef!.child("messages")
-  private var newMessageRefHandle: FIRDatabaseHandle?
+  private lazy var messageRef: DatabaseReference = self.roomRef!.child("messages")
+  private var newMessageRefHandle: DatabaseHandle?
   
   var room: Room? {
     didSet {
@@ -27,7 +27,7 @@ class RoomDetailViewController: JSQMessagesViewController {
     }
   }
   
-  private lazy var userIsTypingRef: FIRDatabaseReference =
+  private lazy var userIsTypingRef: DatabaseReference =
     self.roomRef!.child("typingIndicator").child(self.senderId)
   private var localTyping = false
   var isTyping: Bool {
@@ -40,15 +40,15 @@ class RoomDetailViewController: JSQMessagesViewController {
     }
   }
   
-  private lazy var userTypingQuery: FIRDatabaseQuery =
+  private lazy var userTypingQuery: DatabaseQuery =
     self.roomRef!.child("typingIndicator").queryOrderedByValue().queryEqual(toValue: true)
   
-  lazy var storageRef: FIRStorageReference = FIRStorage.storage().reference(forURL: "gs://mate-6402d.appspot.com/")
+  lazy var storageRef: StorageReference = Storage.storage().reference(forURL: "gs://mate-6402d.appspot.com/")
   private let imageURL = "EMPTY"
   
   private var photoItems = [String: JSQPhotoMediaItem]()
   
-  private var updateMessageRef: FIRDatabaseHandle?
+  private var updateMessageRef: DatabaseHandle?
   
   deinit {
     if let refHandle = newMessageRefHandle {
@@ -64,7 +64,7 @@ class RoomDetailViewController: JSQMessagesViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.senderId = FIRAuth.auth()?.currentUser?.uid
+    self.senderId = Auth.auth().currentUser?.uid
     
     collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
     collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
@@ -147,14 +147,14 @@ class RoomDetailViewController: JSQMessagesViewController {
   }
   
   private func fetchImageDataByURL(_ photoURL: String, forMediaItem mediaItem: JSQPhotoMediaItem, clearsPhotoMessageMapOnSuccessForKey key: String?) {
-    let storageRef = FIRStorage.storage().reference(forURL: photoURL)
-    storageRef.data(withMaxSize: INT64_MAX) { (data, error) in
+    let storageRef = Storage.storage().reference(forURL: photoURL)
+    storageRef.getData(maxSize: INT64_MAX) { (data, error) in
       if let error = error {
         print("Error: download iamge data: \(error)")
         return
       }
       
-      storageRef.metadata(completion: { (metaData, error) in
+      storageRef.getMetadata(completion: { (metaData, error) in
         if let error = error {
           print("Error: download iamge metaData: \(error)")
           return
@@ -267,7 +267,7 @@ class RoomDetailViewController: JSQMessagesViewController {
     userIsTypingRef = typingRef.child(senderId)
     userIsTypingRef.onDisconnectRemoveValue()
     
-    userTypingQuery.observe(.value) { (data: FIRDataSnapshot) in
+    userTypingQuery.observe(.value) { (data: DataSnapshot) in
       if data.childrenCount == 1 && self.isTyping {
         return
       }
@@ -298,9 +298,9 @@ extension RoomDetailViewController: UIImagePickerControllerDelegate, UINavigatio
       if let key = sendPhoto() {
         asset?.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
           let imageFileURL = contentEditingInput?.fullSizeImageURL
-          let path = "\(String(describing: FIRAuth.auth()?.currentUser?.uid))/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(photoReferenceUrl.lastPathComponent)"
+          let path = "\(String(describing: Auth.auth().currentUser?.uid))/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\(photoReferenceUrl.lastPathComponent)"
           
-          self.storageRef.child(path).putFile(imageFileURL!, metadata: nil) { (metadata, error) in
+          self.storageRef.child(path).putFile(from: imageFileURL!, metadata: nil) { (metadata, error) in
             if let error = error {
               print("Error: uploading photo: \(error.localizedDescription)")
               return
@@ -314,10 +314,10 @@ extension RoomDetailViewController: UIImagePickerControllerDelegate, UINavigatio
       let image = info[UIImagePickerControllerOriginalImage] as! UIImage
       if let key = sendPhoto() {
         let imageData = UIImageJPEGRepresentation(image, 1.0)
-        let imagePath = FIRAuth.auth()!.currentUser!.uid + "/\(Int(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
-        let metadata = FIRStorageMetadata()
+        let imagePath = Auth.auth().currentUser!.uid + "/\(Int(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
+        let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
-        storageRef.child(imagePath).put(imageData!, metadata: metadata) { (metadata, error) in
+        storageRef.child(imagePath).putData(imageData!, metadata: metadata) { (metadata, error) in
           if let error = error {
             print("Error: uploading photo: \(error)")
             return

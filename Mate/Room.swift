@@ -13,7 +13,7 @@ class Room {
   
   var title: String
   var userEmail: String
-  let ref: FIRDatabaseReference?
+  let ref: DatabaseReference?
   var completed: Bool
   let key: String
   
@@ -25,7 +25,7 @@ class Room {
     self.ref = nil
   }
   
-  init(snapshot: FIRDataSnapshot) {
+  init(snapshot: DataSnapshot) {
     key = snapshot.key
     let snapshotValue = snapshot.value as! [String: AnyObject]
     title = snapshotValue["title"] as! String

@@ -13,14 +13,14 @@ import FBSDKCoreKit
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, FIRMessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
   
   var window: UIWindow?
   
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    FIRApp.configure()
-    FIRDatabase.database().persistenceEnabled = true
+    FirebaseApp.configure()
+    Database.database().isPersistenceEnabled = true
     
     KOSession.shared().clientSecret = "3EZsCXbSikOC0dTs7NLjBzkJSJyWQJqG"
     
@@ -33,7 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         options: authOptions,
         completionHandler: {_, _ in })
       // For iOS 10 data message (sent via FCM
-      FIRMessaging.messaging().remoteMessageDelegate = self
+      Messaging.messaging().delegate = self
+//      Messaging.messaging().remoteMessageDelegate = self
     } else {
       let settings: UIUserNotificationSettings =
         UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
@@ -103,8 +104,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
   
-  func applicationReceivedRemoteMessage(_ remoteMessage: FIRMessagingRemoteMessage) {
+  func application(received remoteMessage: MessagingRemoteMessage) {
     print(remoteMessage.appData)
+  }
+  
+  func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+    
   }
 }
 

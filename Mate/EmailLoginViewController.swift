@@ -22,8 +22,8 @@ class EmailLoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        try! FIRAuth.auth()!.signOut()
-        FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
+        try! Auth.auth().signOut()
+        Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
                 self.performSegue(withIdentifier: self.loginToList, sender: nil)
             }
@@ -57,7 +57,7 @@ class EmailLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        FIRAuth.auth()!.signIn(withEmail: textFieldLoginEmail.text!, password: textFieldLoginPassword.text!, completion: nil)
+        Auth.auth().signIn(withEmail: textFieldLoginEmail.text!, password: textFieldLoginPassword.text!, completion: nil)
     }
     
     @IBAction func signUpAction(_ sender: Any) {
@@ -71,10 +71,10 @@ class EmailLoginViewController: UIViewController, UITextFieldDelegate {
                                         let emailField = alert.textFields![0]
                                         let passwordField = alert.textFields![1]
                                         
-                                        FIRAuth.auth()!.createUser(withEmail: emailField.text!,
+                                        Auth.auth().createUser(withEmail: emailField.text!,
                                                                    password: passwordField.text!) { user, error in
                                                                     if error == nil {
-                                                                        FIRAuth.auth()!.signIn(withEmail: self.textFieldLoginEmail.text!,
+                                                                        Auth.auth().signIn(withEmail: self.textFieldLoginEmail.text!,
                                                                                                password: self.textFieldLoginPassword.text!)
                                                                     }
                                         }
