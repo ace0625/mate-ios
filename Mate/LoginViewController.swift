@@ -18,6 +18,11 @@ class LoginViewController: UIViewController {
   let loginToEmail = "LoginToEmail"
   
   // MARK: Properties
+  @IBOutlet weak var pageView: UIView!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var facebookLogInButton: UIButton!
+  @IBOutlet weak var kakaoLogInButton: UIButton!
+  
   var userEmail: String?
   
   override func viewDidLoad() {
@@ -28,6 +33,8 @@ class LoginViewController: UIViewController {
         self.performSegue(withIdentifier: self.loginToList, sender: nil)
       }
     }
+    
+    self.setUpView()
   }
   
   override func didReceiveMemoryWarning() {
@@ -48,6 +55,42 @@ class LoginViewController: UIViewController {
     self.performSegue(withIdentifier: self.loginToEmail, sender: nil)
   }
   
+  // MARK: Functions
+  
+  /*
+   Set up UI.
+   */
+  func setUpView() {
+    let colorFrom: UIColor = UIColor(hexString: "#130cb7")!
+    let colorTo: UIColor = UIColor(hexString: "#52e5e7")!
+    
+    let gradientColors: [CGColor] = [colorFrom.cgColor, colorTo.cgColor]
+    
+    let gradientLayer: CAGradientLayer = CAGradientLayer()
+    gradientLayer.colors = gradientColors
+    gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+    gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+    gradientLayer.frame = self.pageView.bounds
+    self.pageView.layer.insertSublayer(gradientLayer, at: 0)
+    
+    let attrString = NSMutableAttributedString(string: self.titleLabel.text!)
+    attrString.addAttribute(NSKernAttributeName, value: 4.4, range: NSMakeRange(0, attrString.length))
+    self.titleLabel.attributedText = attrString
+    
+    self.facebookLogInButton.layer.cornerRadius = 4
+    self.facebookLogInButton.layer.shadowColor = UIColor(hexString: "#3fa5a5a5")?.cgColor
+    self.facebookLogInButton.layer.shadowOffset = CGSize(width: 0.0, height: 0.5)
+    self.facebookLogInButton.layer.shadowOpacity = 0.2
+    
+    self.kakaoLogInButton.layer.cornerRadius = 4
+    self.kakaoLogInButton.layer.shadowColor = UIColor(hexString: "#3fa5a5a5")?.cgColor
+    self.kakaoLogInButton.layer.shadowOffset = CGSize(width: 0.0, height: 0.5)
+    self.kakaoLogInButton.layer.shadowOpacity = 0.2
+  }
+  
+  /*
+   Facebook log in.
+   */
   func facebookLogin() {
     let fbLoginManager:FBSDKLoginManager = FBSDKLoginManager()
     fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) -> Void in
@@ -63,12 +106,15 @@ class LoginViewController: UIViewController {
     }
   }
   
+  /*
+   Kakao log in.
+   */
   func kakaoLogin() {
     let session: KOSession = KOSession.shared();
     if session.isOpen() {
       session.close()
     }
-
+    
     session.presentingViewController = self
     session.open(completionHandler: { (error) in
       if error != nil {
@@ -102,6 +148,9 @@ class LoginViewController: UIViewController {
     }, authParams: nil, authTypes: [NSNumber(value: KOAuthType.talk.rawValue), NSNumber(value: KOAuthType.account.rawValue), NSNumber(value: KOAuthType.story.rawValue)])
   }
   
+  /*
+   Fetch data from Facebook.
+   */
   func getFBUserData() {
     if FBSDKAccessToken.current() != nil {
       FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
@@ -114,6 +163,9 @@ class LoginViewController: UIViewController {
     }
   }
   
+  /*
+   Firebase log in.
+   */
   func signInToFirebase() {
     let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
     Auth.auth().signIn(with: credential, completion: { (user, error) in
@@ -121,3 +173,4 @@ class LoginViewController: UIViewController {
     })
   }
 }
+
