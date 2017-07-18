@@ -42,19 +42,6 @@ class LoginViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  // MARK: Actions
-  @IBAction func facebookLoginAction(_ sender: Any) {
-    self.facebookLogin()
-  }
-  
-  @IBAction func kakaoLoginAction(_ sender: Any) {
-    self.kakaoLogin()
-  }
-  
-  @IBAction func emailLoginAction(_ sender: Any) {
-    self.performSegue(withIdentifier: self.loginToEmail, sender: nil)
-  }
-  
   // MARK: Functions
   
   /*
@@ -171,6 +158,20 @@ class LoginViewController: UIViewController {
     Auth.auth().signIn(with: credential, completion: { (user, error) in
       print("Sign in to Firebase")
     })
+  }
+  
+  // MARK: Actions
+  
+  @IBAction func facebookLoginAction(_ sender: Any) {
+    self.facebookLogin()
+  }
+  
+  @IBAction func kakaoLoginAction(_ sender: Any) {
+    self.kakaoLogin()
+  }
+  
+  @IBAction func emailLoginAction(_ sender: Any) {
+    self.performSegue(withIdentifier: self.loginToEmail, sender: nil)
   }
 }
 
