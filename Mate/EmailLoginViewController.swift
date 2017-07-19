@@ -28,6 +28,14 @@ class EmailLoginViewController: UIViewController, UITextFieldDelegate {
                 self.performSegue(withIdentifier: self.loginToList, sender: nil)
             }
         }
+      
+//      self.textFieldLoginEmail.borderStyle = .none
+      self.textFieldLoginEmail.layer.backgroundColor = UIColor.white.cgColor
+      self.textFieldLoginEmail.layer.masksToBounds = false
+      self.textFieldLoginEmail.layer.shadowColor = UIColor(hexString: "#eeeeee")?.cgColor
+      self.textFieldLoginEmail.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+      self.textFieldLoginEmail.layer.shadowOpacity = 1.0
+      self.textFieldLoginEmail.layer.shadowRadius = 0.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
