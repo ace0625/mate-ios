@@ -29,13 +29,6 @@ class EmailLoginViewController: UIViewController, UITextFieldDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    try! Auth.auth().signOut()
-    Auth.auth().addStateDidChangeListener() { auth, user in
-      if user != nil {
-        self.performSegue(withIdentifier: self.loginToList, sender: nil)
-      }
-    }
-    
     self.setUpView()
   }
   
@@ -56,15 +49,14 @@ class EmailLoginViewController: UIViewController, UITextFieldDelegate {
     // Dispose of any resources that can be recreated.
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    super.prepare(for: segue, sender: sender)
-    
-    let navVc = segue.destination as! UINavigationController
-    let roomListVc = navVc.viewControllers.first as! RoomListTableViewController
-    
-    roomListVc.senderDisplayName = textFieldLoginEmail?.text
-  }
-  
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    super.prepare(for: segue, sender: sender)
+//    
+//    let navVc = segue.destination as! UINavigationController
+//    let roomListVc = navVc.viewControllers.first as! RoomListTableViewController
+//    
+//    roomListVc.senderDisplayName = textFieldLoginEmail?.text
+//  }
   
   // MARK: Functions
   
@@ -135,8 +127,13 @@ class EmailLoginViewController: UIViewController, UITextFieldDelegate {
 //                                    Auth.auth().createUser(withEmail: emailField.text!,
 //                                                           password: passwordField.text!) { user, error in
 //                                                            if error == nil {
-//                                                              Auth.auth().signIn(withEmail: self.textFieldLoginEmail.text!,
-//                                                                                 password: self.textFieldLoginPassword.text!)
+//                                                              print("sign up success")
+//                                                              Auth.auth().signIn(withEmail: self.textFieldLoginEmail.text!, password: self.textFieldLoginPassword.text!)
+//                                                              
+//                                                              let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                                                              let mainController = storyboard.instantiateViewController(withIdentifier: "roomList") as UIViewController
+//                                                              let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                                                              appDelegate.window?.rootViewController = mainController
 //                                                            }
 //                                    }
 //    }
@@ -185,9 +182,11 @@ class EmailLoginViewController: UIViewController, UITextFieldDelegate {
     if textField == textFieldLoginEmail {
       textFieldLoginPassword.becomeFirstResponder()
     }
+    
     if textField == textFieldLoginPassword {
       textField.resignFirstResponder()
     }
+    
     return true
   }
   

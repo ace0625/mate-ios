@@ -30,7 +30,10 @@ class LoginViewController: UIViewController {
     try! Auth.auth().signOut()
     Auth.auth().addStateDidChangeListener() { auth, user in
       if user != nil {
-        self.performSegue(withIdentifier: self.loginToList, sender: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainController = storyboard.instantiateViewController(withIdentifier: "roomList") as UIViewController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = mainController
       }
     }
     

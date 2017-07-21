@@ -21,6 +21,10 @@
 		AAA47ACE1F0CCDED00BD2DFA /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA47ACD1F0CCDED00BD2DFA /* KakaoOpenSDK.framework */; };
 		AAA47AD01F0DF72200BD2DFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAA47ACF1F0DF72200BD2DFA /* GoogleService-Info.plist */; };
 		AAA805E61F1F5D1C00702807 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA805E51F1F5D1C00702807 /* SignUpViewController.swift */; };
+		AAAB88071F2199D300A4B53F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAB88051F2199D300A4B53F /* Login.storyboard */; };
+		AAAB88091F21E63E00A4B53F /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB88081F21E63E00A4B53F /* AppStoryboard.swift */; };
+		AAAB880B1F21F2B300A4B53F /* Information.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAB880A1F21F2B300A4B53F /* Information.storyboard */; };
+		AAAB880D1F21F5BD00A4B53F /* BasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB880C1F21F5BD00A4B53F /* BasicInfoViewController.swift */; };
 		AAB25E841F0240B700E349AC /* RoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */; };
 		AAB25E861F02559E00E349AC /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB25E851F02559E00E349AC /* Room.swift */; };
 		B064DFBBD8D6040F1683095C /* Pods_Mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0469476E516BD5FEF8D69C /* Pods_Mate.framework */; };
@@ -73,6 +77,10 @@
 		AAA47ACD1F0CCDED00BD2DFA /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		AAA47ACF1F0DF72200BD2DFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAA805E51F1F5D1C00702807 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		AAAB88061F2199D300A4B53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		AAAB88081F21E63E00A4B53F /* AppStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; tabWidth = 2; };
+		AAAB880A1F21F2B300A4B53F /* Information.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Information.storyboard; sourceTree = "<group>"; };
+		AAAB880C1F21F5BD00A4B53F /* BasicInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController.swift; sourceTree = "<group>"; };
 		AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RoomListTableViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAB25E851F02559E00E349AC /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAB25E8A1F034CA300E349AC /* Mate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -190,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				AA30705D1F00DE2C00E84E18 /* Main.storyboard */,
+				AAAB88051F2199D300A4B53F /* Login.storyboard */,
+				AAAB880A1F21F2B300A4B53F /* Information.storyboard */,
 				AA30708C1F00F12B00E84E18 /* LaunchScreen.storyboard */,
 			);
 			name = Views;
@@ -203,6 +213,8 @@
 				AA513A391F04D5160069928B /* RoomDetailViewController.swift */,
 				AAA47A711F0A141B00BD2DFA /* EmailLoginViewController.swift */,
 				AAA805E51F1F5D1C00702807 /* SignUpViewController.swift */,
+				AAAB88081F21E63E00A4B53F /* AppStoryboard.swift */,
+				AAAB880C1F21F5BD00A4B53F /* BasicInfoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -378,6 +390,8 @@
 				AA30708D1F00F12B00E84E18 /* LaunchScreen.storyboard in Resources */,
 				AAA47AD01F0DF72200BD2DFA /* GoogleService-Info.plist in Resources */,
 				AA3070611F00DE2C00E84E18 /* Assets.xcassets in Resources */,
+				AAAB880B1F21F2B300A4B53F /* Information.storyboard in Resources */,
+				AAAB88071F2199D300A4B53F /* Login.storyboard in Resources */,
 				AA30705F1F00DE2C00E84E18 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,7 +555,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAB88091F21E63E00A4B53F /* AppStoryboard.swift in Sources */,
 				AA513A3A1F04D5160069928B /* RoomDetailViewController.swift in Sources */,
+				AAAB880D1F21F5BD00A4B53F /* BasicInfoViewController.swift in Sources */,
 				AAA47A721F0A141B00BD2DFA /* EmailLoginViewController.swift in Sources */,
 				AAB25E841F0240B700E349AC /* RoomListTableViewController.swift in Sources */,
 				AA17D42E1F1DD1B700F911E8 /* SwiftHEXColors.swift in Sources */,
@@ -591,6 +607,14 @@
 				AA30705E1F00DE2C00E84E18 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AAAB88051F2199D300A4B53F /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAAB88061F2199D300A4B53F /* Base */,
+			);
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

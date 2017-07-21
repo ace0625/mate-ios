@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
   
   // MARK: Properties
   @IBOutlet var textFieldEmail: UITextField!
@@ -75,6 +75,27 @@ class SignUpViewController: UIViewController {
     self.bottomViewContainer.layer.borderWidth = 1.0
   }
   
+  // MARK: Functions
+  
+  
+  /*
+   Check valid email address according to the designated rules.
+   */
+  func checkValidEmailAddress(_ emailAddress: NSString) -> Bool {
+    let filterString = "[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}"
+    let emailTest = NSPredicate.init(format: "SELF MATCHES %@", filterString)
+    return emailTest.evaluate(with:emailAddress)
+  }
+  
+  /*
+   Check valid pasword according to the designated rules.
+   */
+  func checkValidPassword(_ password: NSString) -> Bool {
+    let filterString = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d^a-zA-Z0-9].{5,19}$"
+    let passwordTest = NSPredicate.init(format: "SELF MATCHES %@", filterString)
+    return passwordTest.evaluate(with:password)
+  }
+  
   // MARK: Actions
   
   @IBAction func backButtonAction(_ sender: Any) {
@@ -89,4 +110,6 @@ class SignUpViewController: UIViewController {
   
   @IBAction func goToLoginAction(_ sender: Any) {
   }
+  
+  // MARK: TextField delegate
 }

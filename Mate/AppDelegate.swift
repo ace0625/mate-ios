@@ -19,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+//    if isLoggedIn {
+//      let storyboard = UIStoryboard(name: "Login", bundle: nil)
+//      let mainController = storyboard.instantiateViewController(withIdentifier: "") as UIViewController
+//      let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//      appDelegate.window?.rootViewController = mainController
+//    }
+    
     FirebaseApp.configure()
     Database.database().isPersistenceEnabled = true
     
@@ -32,9 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       UNUserNotificationCenter.current().requestAuthorization(
         options: authOptions,
         completionHandler: {_, _ in })
+      
       // For iOS 10 data message (sent via FCM
       Messaging.messaging().delegate = self
-//      Messaging.messaging().remoteMessageDelegate = self
     } else {
       let settings: UIUserNotificationSettings =
         UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
