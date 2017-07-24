@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Psz-WT-Uwe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Basic Info View Controller-->
+        <scene sceneID="9M2-cV-3K4">
+            <objects>
+                <viewController id="Psz-WT-Uwe" customClass="BasicInfoViewController" customModule="Mate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b89-wt-Ddz"/>
+                        <viewControllerLayoutGuide type="bottom" id="eLD-yB-CeF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NJU-9z-yi7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNO-WF-o4h">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="hyy-St-1Ib">
+                                        <barButtonItem key="rightBarButtonItem" title="취소" id="Bav-SB-1Df">
+                                            <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원님의 정보를 입력해 주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KG-7s-FCd">
+                                <rect key="frame" x="79" y="80" width="217" height="22"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46A-Se-RIR">
+                                <rect key="frame" x="40" y="267" width="295" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldq-cc-Bya">
+                                <rect key="frame" x="40" y="354" width="295" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TId-SJ-emG">
+                                <rect key="frame" x="107" y="434" width="29" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAY-gD-F64">
+                                        <rect key="frame" x="0.0" y="0.0" width="29" height="50"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="30" maxX="10" maxY="0.0"/>
+                                        <state key="normal" image="kakaoIcon">
+                                            <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="여자" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHl-K7-9Ru">
+                                        <rect key="frame" x="0.0" y="50" width="29" height="18"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="Qku-v1-06G"/>
+                                    <constraint firstAttribute="height" constant="68" id="cns-BQ-J8T"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aYu-KU-vrX">
+                                <rect key="frame" x="203" y="434" width="29" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYZ-0W-iBq">
+                                        <rect key="frame" x="0.0" y="0.0" width="29" height="50"/>
+                                        <color key="backgroundColor" red="0.047058823530000002" green="0.34901960780000002" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="fb_button">
+                                            <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="남자" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qa7-rL-lj5">
+                                        <rect key="frame" x="0.0" y="50" width="29" height="18"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="Sty-bf-758"/>
+                                    <constraint firstAttribute="width" constant="29" id="pDO-5p-3s0"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bre-Y1-4cT">
+                                <rect key="frame" x="15" y="581" width="345" height="45"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="345" id="ELC-ze-cit"/>
+                                    <constraint firstAttribute="height" constant="45" id="NS0-QR-elg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progressViewStyle="bar" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="fH5-ta-xLI">
+                                <rect key="frame" x="0.0" y="656.5" width="375" height="2.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e8y-z7-i2n">
+                                <rect key="frame" x="142" y="132" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="XfZ-Ih-eJn"/>
+                                    <constraint firstAttribute="width" constant="90" id="fYI-E9-RuF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="46A-Se-RIR" firstAttribute="centerX" secondItem="NJU-9z-yi7" secondAttribute="centerX" id="9A0-oq-58V"/>
+                            <constraint firstItem="Bre-Y1-4cT" firstAttribute="centerX" secondItem="NJU-9z-yi7" secondAttribute="centerX" id="APq-MR-ljo"/>
+                            <constraint firstItem="ldq-cc-Bya" firstAttribute="leading" secondItem="NJU-9z-yi7" secondAttribute="leading" constant="40" id="DCV-jN-nkc"/>
+                            <constraint firstItem="Bre-Y1-4cT" firstAttribute="top" secondItem="aYu-KU-vrX" secondAttribute="bottom" constant="79" id="EaP-2w-Dhb"/>
+                            <constraint firstAttribute="trailing" secondItem="bNO-WF-o4h" secondAttribute="trailing" id="I1f-DE-2ct"/>
+                            <constraint firstItem="bNO-WF-o4h" firstAttribute="top" secondItem="b89-wt-Ddz" secondAttribute="bottom" id="IUU-2o-9bP"/>
+                            <constraint firstItem="ldq-cc-Bya" firstAttribute="top" secondItem="46A-Se-RIR" secondAttribute="bottom" constant="70" id="M8A-9Y-dht"/>
+                            <constraint firstAttribute="trailing" secondItem="Bre-Y1-4cT" secondAttribute="trailing" constant="15" id="N0c-Je-Tnb"/>
+                            <constraint firstItem="e8y-z7-i2n" firstAttribute="centerX" secondItem="NJU-9z-yi7" secondAttribute="centerX" id="Qsl-U6-xuh"/>
+                            <constraint firstItem="2KG-7s-FCd" firstAttribute="top" secondItem="bNO-WF-o4h" secondAttribute="bottom" constant="16" id="Qyc-mM-eac"/>
+                            <constraint firstItem="Bre-Y1-4cT" firstAttribute="leading" secondItem="NJU-9z-yi7" secondAttribute="leading" constant="15" id="ZCs-SQ-z9C"/>
+                            <constraint firstAttribute="trailing" secondItem="ldq-cc-Bya" secondAttribute="trailing" constant="40" id="bOS-Fe-jOC"/>
+                            <constraint firstAttribute="trailing" secondItem="46A-Se-RIR" secondAttribute="trailing" constant="40" id="cNb-vv-XMV"/>
+                            <constraint firstItem="aYu-KU-vrX" firstAttribute="top" secondItem="ldq-cc-Bya" secondAttribute="bottom" constant="63" id="dsX-cN-HGP"/>
+                            <constraint firstItem="46A-Se-RIR" firstAttribute="leading" secondItem="NJU-9z-yi7" secondAttribute="leading" constant="40" id="iJj-oy-3Xa"/>
+                            <constraint firstItem="e8y-z7-i2n" firstAttribute="top" secondItem="2KG-7s-FCd" secondAttribute="bottom" constant="30" id="nZ0-8S-hfY"/>
+                            <constraint firstItem="bNO-WF-o4h" firstAttribute="leading" secondItem="NJU-9z-yi7" secondAttribute="leading" id="oJA-u1-82I"/>
+                            <constraint firstItem="TId-SJ-emG" firstAttribute="top" secondItem="ldq-cc-Bya" secondAttribute="bottom" constant="63" id="q9G-Ch-cza"/>
+                            <constraint firstItem="ldq-cc-Bya" firstAttribute="centerX" secondItem="NJU-9z-yi7" secondAttribute="centerX" id="qlI-yQ-BkC"/>
+                            <constraint firstItem="46A-Se-RIR" firstAttribute="top" secondItem="e8y-z7-i2n" secondAttribute="bottom" constant="45" id="s2l-0T-hYf"/>
+                            <constraint firstItem="2KG-7s-FCd" firstAttribute="centerX" secondItem="NJU-9z-yi7" secondAttribute="centerX" id="wE1-SM-dEt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JjX-lW-ThP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335.19999999999999" y="116.49175412293854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fb_button" width="8" height="17"/>
+        <image name="kakaoIcon" width="15" height="14"/>
+    </resources>
+</document>
