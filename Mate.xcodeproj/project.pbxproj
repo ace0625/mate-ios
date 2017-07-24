@@ -25,6 +25,7 @@
 		AAAB88091F21E63E00A4B53F /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB88081F21E63E00A4B53F /* AppStoryboard.swift */; };
 		AAAB880B1F21F2B300A4B53F /* Information.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAB880A1F21F2B300A4B53F /* Information.storyboard */; };
 		AAAB880D1F21F5BD00A4B53F /* BasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB880C1F21F5BD00A4B53F /* BasicInfoViewController.swift */; };
+		AAAB880F1F25DAE600A4B53F /* SchoolInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAB880E1F25DAE600A4B53F /* SchoolInfoViewController.swift */; };
 		AAB25E841F0240B700E349AC /* RoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */; };
 		AAB25E861F02559E00E349AC /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB25E851F02559E00E349AC /* Room.swift */; };
 		B064DFBBD8D6040F1683095C /* Pods_Mate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0469476E516BD5FEF8D69C /* Pods_Mate.framework */; };
@@ -80,7 +81,8 @@
 		AAAB88061F2199D300A4B53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		AAAB88081F21E63E00A4B53F /* AppStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAAB880A1F21F2B300A4B53F /* Information.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Information.storyboard; sourceTree = "<group>"; };
-		AAAB880C1F21F5BD00A4B53F /* BasicInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController.swift; sourceTree = "<group>"; };
+		AAAB880C1F21F5BD00A4B53F /* BasicInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		AAAB880E1F25DAE600A4B53F /* SchoolInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolInfoViewController.swift; sourceTree = "<group>"; };
 		AAB25E831F0240B700E349AC /* RoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RoomListTableViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAB25E851F02559E00E349AC /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AAB25E8A1F034CA300E349AC /* Mate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				AAA805E51F1F5D1C00702807 /* SignUpViewController.swift */,
 				AAAB88081F21E63E00A4B53F /* AppStoryboard.swift */,
 				AAAB880C1F21F5BD00A4B53F /* BasicInfoViewController.swift */,
+				AAAB880E1F25DAE600A4B53F /* SchoolInfoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				AA17D42E1F1DD1B700F911E8 /* SwiftHEXColors.swift in Sources */,
 				AA30708B1F00DF1200E84E18 /* LoginViewController.swift in Sources */,
 				AA30705A1F00DE2C00E84E18 /* AppDelegate.swift in Sources */,
+				AAAB880F1F25DAE600A4B53F /* SchoolInfoViewController.swift in Sources */,
 				AAA805E61F1F5D1C00702807 /* SignUpViewController.swift in Sources */,
 				AA30708F1F00F18B00E84E18 /* User.swift in Sources */,
 				AAB25E861F02559E00E349AC /* Room.swift in Sources */,
